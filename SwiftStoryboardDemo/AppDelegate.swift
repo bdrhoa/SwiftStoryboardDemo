@@ -10,10 +10,38 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var sessionID : String = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        KDataCollector.shared().debug = true
+        // Set your Merchant ID
+        KDataCollector.shared().merchantID = 900100 // Insert your valid merchant ID
+        // Set the location collection configuration
+        KDataCollector.shared().locationCollectorConfig =
+        KLocationCollectorConfig.requestPermission
+        // For a released app, you'll want to set this to KEnvironment.Production
+        KDataCollector.shared().environment = KEnvironment.test
+        KountAnalyticsViewController().setEnvironmentForAnalytics(KDataCollector.shared().environment)
+        // To collect Analytics Data, set Boolean flag - analyticsData to true.
+        let analyticsData = true
+        KountAnalyticsViewController().collect(sessionID, analyticsSwitch: analyticsData) {
+            (sessionID, success, error) in
+            //Completion block to know whether device data collection is successful/failed with error/failed without error.
+            if (success) {
+                print("Collection Successful")
+            }
+
+            else {
+                if ((error) != nil) {
+                    print("Collection failed with error: ",error!.localizedDescription)
+                }
+                else {
+                    print("Collection failed without error")
+                }
+            }
+
+        }
         return true
     }
 

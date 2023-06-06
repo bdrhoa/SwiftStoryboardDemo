@@ -13,6 +13,7 @@
 		A242BEA72A265D9D0007D96C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A242BEA52A265D9D0007D96C /* Main.storyboard */; };
 		A242BEA92A265D9E0007D96C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A242BEA82A265D9E0007D96C /* Assets.xcassets */; };
 		A242BEAC2A265D9E0007D96C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A242BEAA2A265D9E0007D96C /* LaunchScreen.storyboard */; };
+		A242BEB52A265EB20007D96C /* KountDataCollectorPackage in Frameworks */ = {isa = PBXBuildFile; productRef = A242BEB42A265EB20007D96C /* KountDataCollectorPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A242BEB52A265EB20007D96C /* KountDataCollectorPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = SwiftStoryboardDemo;
+			packageProductDependencies = (
+				A242BEB42A265EB20007D96C /* KountDataCollectorPackage */,
+			);
 			productName = SwiftStoryboardDemo;
 			productReference = A242BE9C2A265D9D0007D96C /* SwiftStoryboardDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = A242BE932A265D9D0007D96C;
+			packageReferences = (
+				A242BEB32A265EB20007D96C /* XCRemoteSwiftPackageReference "kount-ios-swift-package" */,
+			);
 			productRefGroup = A242BE9D2A265D9D0007D96C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -303,6 +311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kount.SwiftStoryboardDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStoryboardDemo/SwiftStoryboardDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kount.SwiftStoryboardDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStoryboardDemo/SwiftStoryboardDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -358,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A242BEB32A265EB20007D96C /* XCRemoteSwiftPackageReference "kount-ios-swift-package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kount/kount-ios-swift-package";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A242BEB42A265EB20007D96C /* KountDataCollectorPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A242BEB32A265EB20007D96C /* XCRemoteSwiftPackageReference "kount-ios-swift-package" */;
+			productName = KountDataCollectorPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A242BE942A265D9D0007D96C /* Project object */;
 }
